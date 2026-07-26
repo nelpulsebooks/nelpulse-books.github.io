@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue | NELPULSE BOOKS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --text-light: #e0e0e0;
+            --gold: #c5a059;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a:hover, nav a.active { color: var(--gold); }
+        
+        .container {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1.page-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .book-card {
+            background: #141414;
+            border: 1px solid #222;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        .book-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .book-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        .book-card p {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .btn-buy {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--gold);
+            color: var(--bg-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+        .btn-buy:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
 
+    <header>
+        <a href="index.html" class="logo">NELPULSE BOOKS</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html" class="active">Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">The Book Catalogue</h1>
+        
+        <div class="books-grid">
+            <!-- Book 1 -->
+            <div class="book-card">
+                <img src="https://i.imgur.com/86Z913y.png" alt="The Growth Architect">
+                <h3>The Growth Architect</h3>
+                <p>$39</p>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+            <!-- Book 2 -->
+            <div class="book-card">
+                <img src="https://i.imgur.com/86Z913y.png" alt="Epistemic Mastery">
+                <h3>Epistemic Mastery</h3>
+                <p>$42</p>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+            <!-- Book 3 -->
+            <div class="book-card">
+                <img src="https://i.imgur.com/86Z913y.png" alt="The Mindset Matrix">
+                <h3>The Mindset Matrix</h3>
+                <p>$45</p>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+            <!-- Book 4 -->
+            <div class="book-card">
+                <img src="https://i.imgur.com/86Z913y.png" alt="Neural Wealth">
+                <h3>Neural Wealth</h3>
+                <p>$53</p>
+                <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
