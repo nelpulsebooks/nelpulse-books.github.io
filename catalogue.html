@@ -4,117 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue | NELPULSE BOOKS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0a0a;
-            --text-light: #e0e0e0;
-            --gold: #c5a059;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
+            --bg-light: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --gold: #b39245;
+            --gold-dark: #9a7d3a;
+            --border-color: #e5e5e5;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: var(--font-body);
-            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
         }
         header {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #333;
+            padding: 25px 6%;
+            background: var(--bg-light);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
         }
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--gold);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        nav ul { list-style: none; display: flex; gap: 30px; }
+        .logo-box {
+            background: #111;
+            color: var(--gold);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: #111;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .logo-text span { color: var(--gold); }
+        nav ul { display: flex; gap: 40px; list-style: none; }
         nav a {
             text-decoration: none;
-            color: var(--text-light);
-            font-size: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         nav a:hover, nav a.active { color: var(--gold); }
         
         .container {
-            padding: 60px 5%;
+            padding: 60px 6%;
             max-width: 1200px;
             margin: 0 auto;
         }
         h1.page-title {
-            font-family: var(--font-heading);
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 40px;
-            color: var(--text-light);
+            margin-bottom: 30px;
+            color: #111;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            position: relative;
+        }
+        .search-container input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            background: #fff;
+            outline: none;
+        }
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
         }
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
-        .book-card {
-            background: #141414;
-            border: 1px solid #222;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease;
+        .catalog-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
         }
-        .book-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-        .book-card img {
+        .catalog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .catalog-img-box {
             width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 15px;
+            height: 380px;
+            background: #0d0f12;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .book-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--text-light);
+        .catalog-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .catalog-info { padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+        .rating-row { font-size: 0.75rem; color: var(--text-muted); }
+        .rating-row span { color: #d4af37; }
+        .catalog-info h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #111; }
+        .catalog-info p { font-size: 0.8rem; color: var(--text-muted); }
+        .catalog-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
         }
-        .book-card p {
-            color: var(--gold);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .btn-buy {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--gold);
-            color: var(--bg-dark);
+        .catalog-price { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); }
+        .catalog-price span { font-size: 0.8rem; color: #999; text-decoration: line-through; margin-left: 6px; }
+        .card-buttons { display: flex; gap: 8px; }
+        .btn-view, .btn-buy-small {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            font-weight: bold;
-            border-radius: 2px;
+            cursor: pointer;
         }
-        .btn-buy:hover { opacity: 0.9; }
+        .btn-view { border: 1px solid var(--border-color); background: #f9f9f9; color: #333; }
+        .btn-buy-small { background: var(--gold); color: #fff; border: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">NELPULSE BOOKS</a>
+        <a href="index.html" class="logo-area">
+            <div class="logo-box">👑</div>
+            <div class="logo-text">Nelpulse <span>Books</span></div>
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -128,34 +177,74 @@
     <div class="container">
         <h1 class="page-title">The Book Catalogue</h1>
         
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search catalog by title, subtitle, author, ISBN...">
+        </div>
+
         <div class="books-grid">
-            <!-- Book 1 -->
-            <div class="book-card">
-                <img src="https://i.imgur.com/86Z913y.png" alt="The Growth Architect">
-                <h3>The Growth Architect</h3>
-                <p>$39</p>
-                <a href="#" class="btn-buy">Buy Now</a>
+            <div class="catalog-card">
+                <div class="catalog-img-box"><img src="https://i.imgur.com/86Z913y.png" alt="Book"></div>
+                <div class="catalog-info">
+                    <div class="rating-row"><span>★</span> 4.92 | 42,000+ Readers</div>
+                    <h3>The Growth Architect</h3>
+                    <p>The Scientific System for Rapid Height Optimization.</p>
+                </div>
+                <div class="catalog-footer">
+                    <div class="catalog-price">$39 <span>$69</span></div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-view">VIEW</a>
+                        <a href="#" class="btn-buy-small">BUY</a>
+                    </div>
+                </div>
             </div>
-            <!-- Book 2 -->
-            <div class="book-card">
-                <img src="https://i.imgur.com/86Z913y.png" alt="Epistemic Mastery">
-                <h3>Epistemic Mastery</h3>
-                <p>$42</p>
-                <a href="#" class="btn-buy">Buy Now</a>
+
+            <div class="catalog-card">
+                <div class="catalog-img-box"><img src="https://i.imgur.com/86Z913y.png" alt="Book"></div>
+                <div class="catalog-info">
+                    <div class="rating-row"><span>★</span> 4.94 | 15,200+ Readers</div>
+                    <h3>Epistemic Mastery</h3>
+                    <p>Deep cognitive structures for rapid synthesis.</p>
+                </div>
+                <div class="catalog-footer">
+                    <div class="catalog-price">$42 <span>$68</span></div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-view">VIEW</a>
+                        <a href="#" class="btn-buy-small">BUY</a>
+                    </div>
+                </div>
             </div>
-            <!-- Book 3 -->
-            <div class="book-card">
-                <img src="https://i.imgur.com/86Z913y.png" alt="The Mindset Matrix">
-                <h3>The Mindset Matrix</h3>
-                <p>$45</p>
-                <a href="#" class="btn-buy">Buy Now</a>
+
+            <div class="catalog-card">
+                <div class="catalog-img-box"><img src="https://i.imgur.com/86Z913y.png" alt="Book"></div>
+                <div class="catalog-info">
+                    <div class="rating-row"><span>★</span> 4.91 | 28,000+ Readers</div>
+                    <h3>The Mindset Matrix</h3>
+                    <p>Unlocking High-Performance Psychology.</p>
+                </div>
+                <div class="catalog-footer">
+                    <div class="catalog-price">$45 <span>$70</span></div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-view">VIEW</a>
+                        <a href="#" class="btn-buy-small">BUY</a>
+                    </div>
+                </div>
             </div>
-            <!-- Book 4 -->
-            <div class="book-card">
-                <img src="https://i.imgur.com/86Z913y.png" alt="Neural Wealth">
-                <h3>Neural Wealth</h3>
-                <p>$53</p>
-                <a href="#" class="btn-buy">Buy Now</a>
+
+            <div class="catalog-card">
+                <div class="catalog-img-box"><img src="https://i.imgur.com/86Z913y.png" alt="Book"></div>
+                <div class="catalog-info">
+                    <div class="rating-row"><span>★</span> 4.88 | 35,000+ Readers</div>
+                    <h3>Neural Wealth</h3>
+                    <p>The Cognitive Protocol for Exponential Freedom.</p>
+                </div>
+                <div class="catalog-footer">
+                    <div class="catalog-price">$55 <span>$75</span></div>
+                    <div class="card-buttons">
+                        <a href="#" class="btn-view">VIEW</a>
+                        <a href="#" class="btn-buy-small">BUY</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
