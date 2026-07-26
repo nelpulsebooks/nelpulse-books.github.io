@@ -4,97 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | NELPULSE BOOKS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0a0a;
-            --text-light: #e0e0e0;
-            --gold: #c5a059;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
+            --bg-light: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --gold: #b39245;
+            --border-color: #e5e5e5;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: var(--font-body);
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
         header {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #333;
+            padding: 25px 6%;
+            background: var(--bg-light);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #f0f0f0;
         }
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--gold);
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        nav ul { list-style: none; display: flex; gap: 30px; }
+        .logo-box {
+            background: #111;
+            color: var(--gold);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            color: #111;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .logo-text span { color: var(--gold); }
+        nav ul { display: flex; gap: 40px; list-style: none; }
         nav a {
             text-decoration: none;
-            color: var(--text-light);
-            font-size: 0.9rem;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         nav a:hover, nav a.active { color: var(--gold); }
         
         .container {
-            padding: 80px 5%;
+            padding: 80px 6%;
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
         h1 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             margin-bottom: 25px;
-            color: var(--text-light);
+            color: #111;
             line-height: 1.2;
         }
         .subtitle {
-            color: #999;
-            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
             max-width: 800px;
             margin: 0 auto 60px auto;
         }
         .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 20px;
-            margin-top: 50px;
+            margin-top: 40px;
             text-align: left;
         }
         .pillar-card {
-            background: #141414;
-            border: 1px solid #222;
+            background: #fafafa;
+            border: 1px solid var(--border-color);
             padding: 25px;
-            border-radius: 6px;
+            border-radius: 8px;
         }
         .pillar-card span {
             color: var(--gold);
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: block;
             margin-bottom: 10px;
         }
         .pillar-card h3 {
-            font-family: var(--font-heading);
+            font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
             margin-bottom: 10px;
+            color: #111;
         }
         .pillar-card p {
-            color: #888;
+            color: var(--text-muted);
             font-size: 0.85rem;
         }
     </style>
@@ -102,7 +122,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">NELPULSE BOOKS</a>
+        <a href="index.html" class="logo-area">
+            <div class="logo-box">👑</div>
+            <div class="logo-text">Nelpulse <span>Books</span></div>
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -117,7 +140,7 @@
         <h1>Architecting Strategic Literature for the Modern Intellectual</h1>
         <p class="subtitle">Nelpulse Publications was founded with a singular mandate to synthesize cutting-edge human physiology, cognitive science, high-stakes wealth strategy, and immersive high-society literature into beautifully engineered publications.</p>
         
-        <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--gold); margin-top: 40px;">Our Four Disciplines</h2>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #111; margin-top: 50px;">Our Four Disciplines</h2>
         
         <div class="pillars-grid">
             <div class="pillar-card">
