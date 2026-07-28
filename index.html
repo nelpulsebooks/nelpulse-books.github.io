@@ -32,83 +32,45 @@
         }
 
         /* --- Header --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 6%;
-            background: var(--bg-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #f0f0f0;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    background: var(--bg-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+}
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex: 1; /* Logo ko left side fix rakhega */
+}
 
-        .logo-box {
-            background: #111;
-            color: var(--gold);
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            font-size: 14px;
-        }
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Navigation ko hamesha exact center mein rakhega */
+}
 
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            color: #111;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
 
-        .logo-text span {
-            color: var(--gold);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--gold);
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #111;
-        }
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Search/Icons ko right side rakhega */
+    align-items: center;
+    gap: 20px;
+}
 
         .menu-circle-btn {
             background: #111;
