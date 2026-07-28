@@ -1,0 +1,97 @@
+:root {
+    --bg-light: #ffffff;
+    --text-main: #111111;
+    --text-muted: #666666;
+    --gold: #b39245;
+    --gold-dark: #9a7d3a;
+    --border-color: #e5e5e5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+}
+
+/* --- Common Header (Har page par ek jaisa center aligned aur match karta hua) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    background: var(--bg-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex: 1;
+}
+
+.logo-box {
+    background: #111;
+    color: var(--gold);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #111;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.logo-text span { color: var(--gold); }
+
+/* Navigation Center Alignment Fixed for ALL Pages */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+/* Active page color matching theme gold */
+nav a:hover, nav a.active {
+    color: var(--gold);
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
