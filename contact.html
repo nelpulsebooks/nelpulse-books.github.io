@@ -20,23 +20,45 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 6%;
-            background: var(--bg-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    background: var(--bg-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex: 1; /* Logo ko left side fix rakhega */
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Navigation ko hamesha exact center mein rakhega */
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Search/Icons ko right side rakhega */
+    align-items: center;
+    gap: 20px;
+}
         .logo-box {
             background: #111;
             color: var(--gold);
